@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /** 
- * adding comment to test push
+ * I hate github
  * Connection strings
  * @author mrclaytor
  *
