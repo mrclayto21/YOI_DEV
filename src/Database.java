@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 /** 
  * I hate github
+ * like really hate it
  * Connection strings
  * @author mrclaytor
  *
