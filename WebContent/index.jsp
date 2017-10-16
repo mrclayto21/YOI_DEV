@@ -10,9 +10,9 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>Youth Outreach Initiative</title>
 </head>
-	<body style=background-color:#080808>
+	<body style=background-color:#fff>
 	<!-- Navigation bar -->
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -20,12 +20,14 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span> 
 				    </button>
-					<a class="navbar-brand" href="#">Youth Outreach Initiative</a>
+				    <!-- Replace with logo -->
+					<a class="navbar-brand" href="index.jsp">YOI Logo</a>
 				</div>
+				<!-- code once solution -->
 				<div class="collapse navbar-collapse" id="myNavbar">
 			      <ul class="nav navbar-nav">
-			        <li class="active"><a href="#">Home</a></li>
-			        <li><a href="#">Page 1</a></li>
+			        <li class="active"><a href ="index.jsp" >Home</a></li>
+			        <li><a href="aboutUs.jsp">About Us</a></li>
 			        <li><a href="#">Page 2</a></li> 
 			        <li><a href="#">Page 3</a></li> 
 			      </ul>
