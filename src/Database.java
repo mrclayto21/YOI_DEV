@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /** 
  * I hate github
@@ -21,16 +22,15 @@ public class Database {
 	final private String host = "jdbc:mysql://localhost:3306/YOI_DEV"; 
 	final private String user = "root"; 
 	final private String pass = "root"; 
+ 
 	
 	//test values
-	final private String q1 = "SELECT * FROM YOI_DEV.STUDENT"; 
-	final private String q2 = "INSERT INTO YOI_DEV.LESSONPLAN VALUES (0, 1, 2, 3)"; 
-	final private String q3 = "SELECT * FROM YOI_DEV.LESSONPLAN"; 
 	
 	public static void main(String[] args){
 		Database foo = new Database(); 
 		try {
 			foo.readDatabase();
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,15 +42,7 @@ public class Database {
 			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection(host + "?" + "user=" + user + "&password=" + pass);
 			sta = con.createStatement(); 
-			
-			//testing query 
-			res = sta.executeQuery(q1);
-			getResultSet(res);
-			pre = con.prepareStatement(q3);
-			res = pre.executeQuery(); 
-			getResultSet(res); 
-			getData(res); 
-			
+			getTables();
 		}catch (Exception e){//connection failed
 			System.out.println("Exception thrown: \n" + e.getMessage());
 		} finally { 
@@ -64,36 +56,15 @@ public class Database {
 				con.close();
 			}
 		}
-	}
-/**
- * testing table connection
- * to be deleted
- * @param res2
- * @throws SQLException
- */
-	private void getData(ResultSet res2) throws SQLException {
-		// TODO Auto-generated method stub
-		System.out.println("\nTesting:");
-		System.out.println("T " + res2.getMetaData().getTableName(1));
-		for(int i = 1; i <= res2.getMetaData().getColumnCount(); i++){
-			System.out.println("C " + i + " " + res2.getMetaData().getColumnName(i)); 
-		}
-	}
-/**
- * testing data out 
- * to be deleted
- * @param res2
- * @throws SQLException
- */
-	private void getResultSet(ResultSet res2) throws SQLException {
-		// TODO Auto-generated method stub
-		System.out.println("Data Values");
-		while (res2.next()){
-			int id = res2.getInt("LESSON_ID"); 
-			String mn = res2.getString("MODULE_NAME"); 
-			String ln = res2.getString("LESSON_NAME");
-			String ld = res2.getString("LESSON_DESCRIPTION");
-			System.out.format("%s, %s, %s, %s\n", id, mn, ln, ld);
+	}// end readDatabase
+	
+	public void getTables() throws SQLException {
+
+	}// get tables
+	public void getColumns() throws SQLException {
+		res = con.getMetaData().getColumns(null, null, "%", null);
+		while (res.next()){
+			System.out.println(res.getString(4));
 		}
 	}
 }//end class
