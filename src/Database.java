@@ -59,7 +59,11 @@ public class Database {
 	}// end readDatabase
 	
 	public void getTables() throws SQLException {
-
+		res.getMetaData().getTableName(0);
+		while (res.next()){
+			System.out.println(res.getString(3));
+		}
+		
 	}// get tables
 	public void getColumns() throws SQLException {
 		res = con.getMetaData().getColumns(null, null, "%", null);

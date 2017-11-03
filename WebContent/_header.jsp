@@ -28,8 +28,7 @@
 			      <ul class="nav navbar-nav">
 			        <li class="active"><a href ="index.jsp" >Home</a></li>
 			        <li><a href="aboutUs.jsp">About Us</a></li>
-			        <li><a href="#">Page 2</a></li> 
-			        <li><a href="#">Page 3</a></li> 
+			        <li><a href="#">Student Progress (Needs active session)</a></li> 
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
