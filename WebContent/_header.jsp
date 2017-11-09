@@ -16,9 +16,9 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span> 
+				        <span class="icon-bar">1</span>
+				        <span class="icon-bar">2</span>
+				        <span class="icon-bar">3</span> 
 				    </button>
 				    <!-- Replace with logo -->
 					<a class="navbar-brand" href="index.jsp">YOI Logo</a>
