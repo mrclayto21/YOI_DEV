@@ -5,9 +5,11 @@
 <html>
 <head>
 	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet"  href="bootstrap-dark-theme.css">
-	<title>Youth Outreach Initiative</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+	  <script src="https://apis.google.com/js/platform.js" async defer></script>
+	  <meta name="google-signin-client_id" content="962796513505-97l0nomavgmo8m4v45jse3025ef4a5r8.apps.googleusercontent.com.apps.googleusercontent.com">
+	  <title>Youth Outreach Initiative</title>
 </head>
 	<body>
 

@@ -6,8 +6,7 @@
 <head>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="bootstrap.css">
-
+	  <link rel="stylesheet" href="./css/bootstrap.min.css">
 	<title>Youth Outreach Initiative</title>
 </head>
 	<body>
@@ -31,8 +30,8 @@
 			        <li><a href="#">Student Progress (Needs active session)</a></li> 
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			        <li><a href="./signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			        <li><a href="./login.jsp"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
 			      </ul>
 			    </div>
 			</div>

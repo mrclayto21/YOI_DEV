@@ -7,8 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet"  href="bootstrap-dark-theme.css">
-	  
+	  <link rel="stylesheet"  href="./css/bootstrap.min.css">
 	<title>Youth Outreach Initiative</title>
 </head>
 <body>
@@ -19,15 +18,10 @@
   </div>
 ... 
 </div>
-<!-- Carousel example For updates an information -->
 
 <div style="width:90%">
 <jsp:include page="_contentContainers.jsp"></jsp:include>
 </div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
