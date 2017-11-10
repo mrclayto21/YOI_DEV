@@ -7,6 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Test Parent Login</h1>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Parent Email</label>
+		    <input type="email" class="form-control" id="inputEmail" placeholder="Parent email">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Child ID</label>
+		    <input type="text" class="form-control" id="inputClassID" placeholder="Child ID">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+		  </div>
+		  <button type="reset" class="btn btn-default">Reset</button>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		  <br/><br/>
+		  <p>Not a member? Sign up <a href="./signUp.jsp"><span></span>here.</a></p>
+	  </form>
 </body>
 </html>

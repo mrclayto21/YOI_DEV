@@ -15,31 +15,12 @@
     <h1>Sign In</h1> 
     <p></p> 
   </div>
-  <div style="width: 30%; margin: auto" >
+  <div style="width: 70%; margin: auto" >
 	  <ul class="nav nav-tabs">
-		  <li><a href="#">Student</a><!--<jsp:include page="./_studentForm.jsp"></jsp:include>--></li>
-		  <li><a href="#">Parent</a><!--<jsp:include page="./_parentForm.jsp"></jsp:include>--></li>
-		  <li><a href="#">Educator</a></li>
+		  <li style="margin:10px"><a href="#">Student</a><jsp:include page="./_studentForm.jsp"></jsp:include></li>
+		  <li style="margin:10px"><a href="#">Parent</a><jsp:include page="./_parentForm.jsp"></jsp:include></li>
+		  <li style="margin:10px"><a href="#">Educator</a>Educator sign-in</li>
 	  </ul>
-      <!--<form>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Student Email</label>
-		    <input type="email" class="form-control" id="inputEmail" placeholder="Student email">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Class ID</label>
-		    <input type="text" class="form-control" id="inputClassID" placeholder="Class ID">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-		  </div>
-		  <button type="reset" class="btn btn-default">Reset</button>
-		  <button type="submit" class="btn btn-default">Submit</button>
-		  <a href="./_parentSign-In.jsp"><span class="btn btn-default">Parent Sign In</span></a>
-		  <br/><br/>
-		  <p>Not a member? Sign up <a href="./signUp.jsp"><span></span>here.</a></p>
-	  </form>-->
   </div>
 
 </div>
