@@ -16,6 +16,7 @@
     <h1>Youth Outreach Initiative</h1> 
     <p> {insert mission statement}</p> 
   </div>
+
 ... 
 </div>
 

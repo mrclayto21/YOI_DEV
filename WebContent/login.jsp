@@ -5,25 +5,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet"  href="./css/bootstrap.min.css">
-<title>Youth Outreach Initiative</title>
+<link rel="stylesheet"  href="./css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <jsp:include page="_header.jsp"></jsp:include>
 <div class="container">
   <div class="jumbotron">
     <h1>Sign In</h1> 
-    <p></p> 
-  </div>
-  <div style="width: 70%; margin: auto" >
-	  <ul class="nav nav-tabs">
-		  <li style="margin:10px"><a href="#">Student</a><jsp:include page="./_studentForm.jsp"></jsp:include></li>
-		  <li style="margin:10px"><a href="#">Parent</a><jsp:include page="./_parentForm.jsp"></jsp:include></li>
-		  <li style="margin:10px"><a href="#">Educator</a>Educator sign-in</li>
+ 
+  </div> <!-- jumbotron -->
+  <div id="loginContainer" style="width: 70%; margin: auto" >
+	  <ul class="nav nav-tabs" id="signTabs" data-tabs="tabs">
+		  <li class="nav-item active" style="margin:10px"><a class="nav-link active" href="#student" data-toggle="tab">Student</a><!--<jsp:include page="./_studentForm.jsp"></jsp:include>--></li>
+		  <li class="nav-item" style="margin:10px"><a class="nav-link" href="#parent" data-toggle="tab">Parent</a><!--<jsp:include page="./_parentForm.jsp"></jsp:include>--></li>
+		  <li class="nav-item" style="margin:10px"><a class="nav-link" href="#educator" data-toggle="tab">Educator</a></li>
 	  </ul>
-  </div>
-
-</div>
-
+	  <div class="tab-content">
+	  <!-- First pane is the student login -->
+	  	<div id="student" class="tab-pane fade in active">
+	  	<h3>Student Login</h3>
+	  	<p><jsp:include page="./_studentForm.jsp"></jsp:include></p>
+	  	</div><!-- first -->
+	  <!-- Second pane is the parent login -->
+	  	<div id="parent" class="tab-pane fade">
+	  	<h3>Parent Login</h3>
+	  	<p><jsp:include page="./_parentForm.jsp"></jsp:include></p>
+	  	</div><!-- second -->
+	  <!-- Third pane is the educator login -->
+	  	<div id="educator" class="tab-pane fade">
+	  	<h3>Educator Login</h3>
+	  	<p><jsp:include page="./_educatorForm.jsp"></jsp:include></p>
+	  	</div> <!-- third -->
+	  </div><!-- tab content -->
+  </div><!-- loginContainer -->
+</div> <!-- container -->
 </body>
 </html>

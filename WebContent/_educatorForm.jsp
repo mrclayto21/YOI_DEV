@@ -9,13 +9,13 @@
 <body>
 <form>
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Parent Email</label>
-		    <input type="email" class="form-control" id="inputEmail" placeholder="Parent email">
+		    <label for="exampleInputEmail1">Educator Email</label>
+		    <input type="email" class="form-control" id="inputEmail" placeholder="Educator email">
 		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Child ID</label>
-		    <input type="text" class="form-control" id="inputClassID" placeholder="Child ID">
-		  </div>
+		  <!--<div class="form-group">
+		    <label for="exampleInputEmail1">Class ID</label>
+		    <input type="text" class="form-control" id="inputClassID" placeholder="Class ID">
+		  </div> -->
 		  <div class="form-group">
 		    <label for="exampleInputPassword1">Password</label>
 		    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
