@@ -7,53 +7,53 @@
 </head>
 <body>
 	<form id="studentSignUp">
+		<!-- parent id -->
+		<div class="form-group">
+			<label for="parentID">Parent ID **</label>
+			<input id="parent_ID" type="text" class="form-control" name="parentID" placeholder="Enter a valid parental ID number">
+		</div><!-- parent id -->
 	<!-- class -->
 		<div class="form-group">
 			<label for="studentClass">Class</label>
 			<br/><div class="btn-group"><br/><button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" name="classDropDown">Select Your Class</button>
-			<br/><div class="dropdown-menu" aria-labelby="classDropDown"></div></div><!-- Class Drop Down -->
+			<br/><div id="class_ID" class="dropdown-menu" aria-labelby="classDropDown"></div></div><!-- Class Drop Down -->
 		</div><!-- class -->
     <!-- grade level -->
    		<div class="form-group">
 			<label for="studentClass">Grade Level</label>
 			<br/><div class="btn-group"><br/><button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" name="classDropDown">Select Your Grade</button>
-			<br/><div class="dropdown-menu" aria-labelby="gradeDropDown"></div></div><!-- Class Drop Down -->
+			<br/><div id="gradeLevel" class="dropdown-menu" aria-labelby="gradeDropDown"></div></div><!-- Class Drop Down -->
 		</div><!-- grade -->
 	<!-- email -->
 		<div class="form-group">
 		    <label for="studentEmail">Student Email</label>
-		    <input type="email" class="form-control" name="inputEmail" placeholder="Email">
+		    <input id="email" type="email" class="form-control" name="inputEmail" placeholder="Email">
 		</div> <!-- email -->
 	<!-- password -->
 		<div class="form-group">
 			<label for="studentPass">Password</label>
-			<input type="password" class="form-control" name="inputPass" placeholder="Password">
+			<input id="password" type="password" class="form-control" name="inputPass" placeholder="Password">
 		</div><!-- password -->
-	<!-- parent id -->
-		<div class="form-group">
-			<label for="parentID">Parent ID **</label>
-			<input type="text" class="form-control" name="parentID" placeholder="Enter a valid parental ID number">
-		</div><!-- parent id -->
 	<!-- first name -->
 		<div class="form-group">
 			<label for="firstName">First Name</label>
-			<input type="text" class="form-control" name="firstName" placeholder="First name">
+			<input id="firstName" type="text" class="form-control" name="firstName" placeholder="First name">
 		</div><!-- first name -->
 	<!-- last name -->
 		<div class="form-group">
 			<label for="lastName">Last Name</label>
-			<input type="text" class="form-control" name="lastName" placeholder="Last name">
+			<input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last name">
 		</div><!-- last name -->
 	<!-- age -->
    		<div class="form-group">
    			<label for="studentAge">Age</label>
-			<input type="text" class="form-control" name="stuAge" placeholder="Enter your age">
+			<input id="age" type="text" class="form-control" name="stuAge" placeholder="Enter your age">
 		</div><!-- student age -->
 	<!-- address line 1 -->
 	<!-- address line 2 -->
 		<div class="form-group">
 			<label for="address1">Street Address</label>
-			<input type="text" class="form-control" name="address1" placeholder="Address">
+			<input id="address" type="text" class="form-control" name="address1" placeholder="Address">
 			<input type="text" class="form-control" name="address2" placeholder="Apt #">
 		</div><!-- address -->
 	<!-- city -->
@@ -72,6 +72,9 @@
 			<label for="stuZip">Zip</label>
 			<input type="text" class="form-control" name="stuZip" placeholder="Zip">
 		</div><!-- zip -->
+	  <button type="reset" class="btn btn-default">Reset</button>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	  <br/><br/>
 	</form>
 </body>
 </html>

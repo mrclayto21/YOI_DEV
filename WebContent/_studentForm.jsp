@@ -8,21 +8,17 @@
 </head>
 <body>
 	<script type="text/javascript" src="./js/common.js"></script>
-	<form method="post" id="stuform" action="login.jsp" onsubmit= "return stuValidate()">
+	<form method="post" id="stuform" action="Login" onsubmit= "return stuValidate()">
 	  <div class="form-group">
 	    <label for="studentEmail">Student Email</label>
-	    <input type="email" class="form-control" name="studentEmail" placeholder="Student email">
-	  </div>
-	  <div class="form-group">
-	    <label for="studentClass">Class ID</label>
-	    <input type="text" class="form-control" name="classID" placeholder="Class ID">
+	    <input id = "email" type="email" class="form-control" name="studentEmail" placeholder="Student email">
 	  </div>
 	  <div class="form-group">
 	    <label for="studentPass">Password</label>
-	    <input type="password" class="form-control" name="studentPass" placeholder="Password">
+	    <input id = "password" type="password" class="form-control" name="studentPass" placeholder="Password">
 	  </div>
 	  <button type="reset" class="btn btn-default">Reset</button>
-	  <button type="submit" class="btn btn-default" onClick= "signIn(studentEmail, classID, studentPass)">Submit</button>
+	  <button type="submit" id="login" class="btn btn-default">Submit</button>
 	  <br/><br/>
 	  <p>Not a member? Sign up <a href="./signUp.jsp"><span></span>here.</a></p>
 	 </form>

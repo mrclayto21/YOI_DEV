@@ -1,16 +1,3 @@
-  // Set the configuration for your app
-  // TODO: Replace with your project's config object
-  var config = {
-    apiKey: "apiKey",
-    authDomain: "projectId.firebaseapp.com",
-    databaseURL: "https://databaseName.firebaseio.com",
-    storageBucket: "bucket.appspot.com"
-  };
-  firebase.initializeApp(config);
-
-  // Get a reference to the database service
-  var database = firebase.database();
-
 /**
  * validates the inputs are not null in student sign in
  * @returns alert if blank values are detected
@@ -56,6 +43,21 @@ function eduValidate() {
 		alert("Password cannot be blank!");
 	}
 };
+
+//testing
+$(document).ready(function(){
+	$("#login").click(function(){
+		var email = $("#studentEmail").val(); 
+		var sClass = $("#studentClass").val();
+		var pass = $("#studentPass").val();
+		if(email && pass){
+			$.ajax({
+				type: "GET", 
+				url: ""
+			})
+		}
+	})
+})
 /**
  * After form validation, this checks to see if the information entered is correct. 
  * If correct, establishes active session.
@@ -63,5 +65,23 @@ function eduValidate() {
  * @returns 
  */
 function signIn() {
-	//to be completed
+	var user = document.getElementByID("studentEmail").value();
+	var stuClass = document.getElementByID("studentClass").value();
+	var pass = document.getElementByID("studentPass").value();
+	
+	var connection = mysql.createConnection({
+		host: 'localhost', 
+		user: 'root', 
+		password: 'root', 
+		database: 'YOI_DEV'
+	});
+	//create connection with error checking
+	connection.connect(function(err){
+		if (!err){
+			console.log("connection created");
+		}else {
+			console.log("error creating connection"); 
+		}
+	}); 
+
 };

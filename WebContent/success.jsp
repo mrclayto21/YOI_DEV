@@ -6,9 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"  href="./css/bootstrap.min.css">
-  <title>Youth Outreach Initiative</title>
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+		 
+	<title>Youth Outreach Initiative</title>
 </head>
 <body>
 <div class="container">
@@ -16,12 +17,11 @@
     <h1>Youth Outreach Initiative</h1> 
     <p> {insert mission statement}</p> 
   </div>
-
-testing
+  <H1>Welcome you have successfully registered!</H1>
+  <a class="btn btn-success" href="./index.jsp" role="button">Home</a>
 </div>
 
 <div style="width:90%">
-<jsp:include page="_contentContainers.jsp"></jsp:include>
 </div>
 
 </body>

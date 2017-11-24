@@ -60,6 +60,9 @@
 			<label for="stuZip">Zip</label>
 			<input type="text" class="form-control" name="stuZip" placeholder="Zip">
 		</div><!-- zip -->
+	  <button type="reset" class="btn btn-default">Reset</button>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	  <br/><br/>
 	</form>
 </body>
 </html>

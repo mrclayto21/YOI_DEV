@@ -7,18 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<form method="post" id="edform" action="login.jsp" onsubmit= "return eduValidate()">
+		<form method="post" id="edform" action="Login" onsubmit= "return eduValidate()">
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Educator Email</label>
-		    <input type="email" class="form-control" name="educatorEmail" placeholder="Educator email">
+		    <input id = "email" type="email" class="form-control" name="educatorEmail" placeholder="Educator email">
 		  </div>
-		  <!--<div class="form-group">
-		    <label for="exampleInputEmail1">Class ID</label>
-		    <input type="text" class="form-control" id="inputClassID" placeholder="Class ID">
-		  </div> -->
 		  <div class="form-group">
 		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" name="educatorPass" placeholder="Password">
+		    <input id = "password" type="password" class="form-control" name="educatorPass" placeholder="Password">
 		  </div>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default">Submit</button>

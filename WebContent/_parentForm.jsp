@@ -7,18 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<form method="post" id="parform" action="login.jsp" onsubmit= "return parValidate()">
+		<form method="post" id="parform" action="Login" onsubmit= "return parValidate()">
 		  <div class="form-group">
 		    <label for="parentEmail">Parent Email</label>
-		    <input type="email" class="form-control" name="parentEmail" placeholder="Parent email">
-		  </div>
-		  <div class="form-group">
-		    <label for="childID">Child ID</label>
-		    <input type="text" class="form-control" name="childID" placeholder="Child ID">
+		    <input id="email" type="email" class="form-control" name="parentEmail" placeholder="Parent email">
 		  </div>
 		  <div class="form-group">
 		    <label for="parentPass">Password</label>
-		    <input type="password" class="form-control" name="parentPass" placeholder="Password">
+		    <input id="password" type="password" class="form-control" name="parentPass" placeholder="Password">
 		  </div>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default">Submit</button>
