@@ -6,8 +6,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+		  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBgZoMZyqUKrR1bToFchi8_LB_xHCTTkpU",
+		    authDomain: "youth-outreach-initiative.firebaseapp.com",
+		    databaseURL: "https://youth-outreach-initiative.firebaseio.com",
+		    projectId: "youth-outreach-initiative",
+		    storageBucket: "youth-outreach-initiative.appspot.com",
+		    messagingSenderId: "962796513505"
+		  };
+		  firebase.initializeApp(config);
+		</script>
 	<title>Youth Outreach Initiative</title>
 </head>
 <body>
@@ -17,7 +31,7 @@
     <p> {insert mission statement}</p> 
   </div>
 
-... 
+testing
 </div>
 
 <div style="width:90%">

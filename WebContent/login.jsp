@@ -16,10 +16,10 @@
     <h1>Sign In</h1> 
  
   </div> <!-- jumbotron -->
-  <div id="loginContainer" style="width: 70%; margin: auto" >
-	  <ul class="nav nav-tabs" id="signTabs" data-tabs="tabs">
-		  <li class="nav-item active" style="margin:10px"><a class="nav-link active" href="#student" data-toggle="tab">Student</a><!--<jsp:include page="./_studentForm.jsp"></jsp:include>--></li>
-		  <li class="nav-item" style="margin:10px"><a class="nav-link" href="#parent" data-toggle="tab">Parent</a><!--<jsp:include page="./_parentForm.jsp"></jsp:include>--></li>
+  <div id="loginContainer" style="width: 65%; margin: auto" >
+	  <ul class="nav nav-tabs" id="loginTabs" data-tabs="tabs">
+		  <li class="nav-item active" style="margin:10px"><a class="nav-link active" href="#student" data-toggle="tab">Student</a></li>
+		  <li class="nav-item" style="margin:10px"><a class="nav-link" href="#parent" data-toggle="tab">Parent</a></li>
 		  <li class="nav-item" style="margin:10px"><a class="nav-link" href="#educator" data-toggle="tab">Educator</a></li>
 	  </ul>
 	  <div class="tab-content">
