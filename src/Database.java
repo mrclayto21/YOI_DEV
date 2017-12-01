@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /** 
- * I hate github
- * like really hate it
  * Connection strings
  * @author mrclaytor
  *
@@ -19,8 +17,8 @@ public class Database {
 	private ResultSet res = null; 
 	
 	final private String host = "jdbc:mysql://localhost:3306/YOI_DEV"; 
-	final private String user = "root"; 
-	final private String pass = "root"; 
+	final private String user = "admin"; 
+	final private String pass = "password"; 
  
 	
 	//test values
@@ -29,9 +27,9 @@ public class Database {
 		Database foo = new Database(); 
 		try {
 			foo.readDatabase();
-
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		 	// TODO Auto-generated catch block
+			System.out.println("here 1");
 			e.printStackTrace();
 		}
 	}//end main
@@ -39,9 +37,13 @@ public class Database {
 	public void readDatabase() throws Exception{
 		try{
 			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection(host + "?" + "user=" + user + "&password=" + pass);
+			con = DriverManager.getConnection(host, user, pass);
 			sta = con.createStatement(); 
-			getTables();
+			System.out.println("successful connection");
+			ResultSet rs = sta.executeQuery("select * from parent;");
+			while (rs.next()){
+				System.out.println(rs.getString(1));
+			}
 		}catch (Exception e){//connection failed
 			System.out.println("Exception thrown: \n" + e.getMessage());
 		} finally { 

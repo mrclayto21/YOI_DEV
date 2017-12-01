@@ -11,7 +11,8 @@ public class UserUtil {
 			String url = "jdbc:mysql://localhost:3306/YOI_DEV"; 
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				conn = DriverManager.getConnection(url,"root", "root");
+				conn = DriverManager.getConnection(url,"admin", "password");
+				System.out.println("Connection was made");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}//end catch

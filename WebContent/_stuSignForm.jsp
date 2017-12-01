@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<form id="studentSignUp">
+	<form id="studentSignUp" method="post" action="SignUp" commandName="studentForm" nsubmit="return stuSigValidate()">
 		<!-- parent id -->
 		<div class="form-group">
 			<label for="parentID">Parent ID **</label>
@@ -54,23 +54,23 @@
 		<div class="form-group">
 			<label for="address1">Street Address</label>
 			<input id="address" type="text" class="form-control" name="address1" placeholder="Address">
-			<input type="text" class="form-control" name="address2" placeholder="Apt #">
+			<input id="apt" type="text" class="form-control" name="address2" placeholder="Apt #">
 		</div><!-- address -->
 	<!-- city -->
 		<div class="form-group">
 			<label for="stuCity">City</label>
-			<input type="text" class="form-control" name="stuCity" placeholder="City">
+			<input id="city" type="text" class="form-control" name="stuCity" placeholder="City">
 		</div><!-- city -->
 	<!-- state -->
 		<div class="form-group">
 			<label for="stuState">State</label>
 			<br/><div class="btn-group"><br/><button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" name="classDropDown">Select Your State</button>
-			<br/><div class="dropdown-menu" aria-labelby="stateDropDown"></div></div><!-- State Drop Down -->
+			<br/><div id="state" class="dropdown-menu" aria-labelby="stateDropDown"></div></div><!-- State Drop Down -->
 		</div><!-- state -->
 	<!-- zip -->
 		<div class="form-group">
 			<label for="stuZip">Zip</label>
-			<input type="text" class="form-control" name="stuZip" placeholder="Zip">
+			<input id = "zip" type="text" class="form-control" name="stuZip" placeholder="Zip">
 		</div><!-- zip -->
 	  <button type="reset" class="btn btn-default">Reset</button>
 	  <button type="submit" class="btn btn-default">Submit</button>

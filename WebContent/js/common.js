@@ -2,18 +2,42 @@
  * validates the inputs are not null in student sign in
  * @returns alert if blank values are detected
  */
-function stuValidate() {
+function stuLogValidate() {
 	var email = document.forms["stuform"]["studentEmail"].value;
-	var cID = document.forms["stuform"]["classID"].value;
+//	var cID = document.forms["stuform"]["classID"].value;
 	var pass = document.forms["stuform"]["studentPass"].value;
 	if(email == null || email== ""){
 		alert("Email cannot be blank!");
-	}else if (cID == null || cID ==""){
-		alert("Class ID is cannot be blank!");
+//	}else if (cID == null || cID ==""){
+//		alert("Class ID is cannot be blank!");
 	}else if (pass == null || pass ==""){
 		alert("Password cannot be blank!");
 	}
 };
+/**
+ * validates inputs for student sign up form
+ * @returns
+ */
+function stuSigValidate() {
+	var parID = document.forms["studentSignUp"]["parent_ID"].value; 
+	var classID = document.forms["studentSignUp"]["class_ID"].value;
+	var grade = document.forms["studentSignUp"]["gradeLevel"].value;
+	var email = document.forms["studentSignUp"]["email"].value;
+	var pass = document.forms["studentSignUp"]["password"].value;
+	var first = document.forms["studentSignUp"]["firstName"].value;
+	var last = document.forms["studentSignUp"]["lastName"].value;
+	var age = document.forms["studentSignUp"]["age"].value;
+	var add1 = document.forms["studentSignUp"]["address"].value;
+	var apt = document.forms["studentSignUp"]["apt"].value;
+	var city = document.forms["studentSignUp"]["city"].value;
+	var state = document.forms["studentSignUp"]["state"].value;
+	var zip = document.forms["studentSignUp"]["zip"].value;
+	//check nulls
+	if (parID == null || parID == ""){
+		alert("Parent ID cannot be null!");
+	}
+}
+
 /**
  * validates the inputs are not null in parent sign in
  * @returns alert if blank values are detected
@@ -58,30 +82,3 @@ $(document).ready(function(){
 		}
 	})
 })
-/**
- * After form validation, this checks to see if the information entered is correct. 
- * If correct, establishes active session.
- * Else, prompts user for input again; 
- * @returns 
- */
-function signIn() {
-	var user = document.getElementByID("studentEmail").value();
-	var stuClass = document.getElementByID("studentClass").value();
-	var pass = document.getElementByID("studentPass").value();
-	
-	var connection = mysql.createConnection({
-		host: 'localhost', 
-		user: 'root', 
-		password: 'root', 
-		database: 'YOI_DEV'
-	});
-	//create connection with error checking
-	connection.connect(function(err){
-		if (!err){
-			console.log("connection created");
-		}else {
-			console.log("error creating connection"); 
-		}
-	}); 
-
-};

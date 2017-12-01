@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	<script type="text/javascript" src="./js/common.js"></script>
-	<form method="post" id="stuform" action="Login" onsubmit= "return stuValidate()">
+	<form method="post" id="stuform" action="login" onsubmit= "return stuLogValidate()">
 	  <div class="form-group">
 	    <label for="studentEmail">Student Email</label>
 	    <input id = "email" type="email" class="form-control" name="studentEmail" placeholder="Student email">

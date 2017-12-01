@@ -38,24 +38,24 @@ public class User {
 		try {
 			if (type == "student"){
 				pStmt = dbConn.prepareStatement(SEL_STUD); 
-				pStmt = setString(1, email); 
-				pStmt = setString(2, password);
+				pStmt.setString(1, email); 
+				pStmt.setString(2, password);
 				ResultSet rs = pStmt.executeQuery(); 
 				while (rs.next()){
 					uName = rs.getString("FIRSTNAME"); 
 				}//end while
 			}else if (type == "parent"){
 				pStmt = dbConn.prepareStatement(SEL_PARE); 
-				pStmt = setString(1, email); 
-				pStmt = setString(2, password);
+				pStmt.setString(1, email); 
+				pStmt.setString(2, password);
 				ResultSet rs = pStmt.executeQuery(); 
 				while (rs.next()){
 					uName = rs.getString("FIRSTNAME"); 
 				}//end while
 			}else if (type == "educator"){
 				pStmt = dbConn.prepareStatement(SEL_EDUC); 
-				pStmt = setString(1, email); 
-				pStmt = setString(2, password);
+				pStmt.setString(1, email); 
+				pStmt.setString(2, password);
 				ResultSet rs = pStmt.executeQuery(); 
 				while (rs.next()){
 					uName = rs.getString("FIRSTNAME"); 
