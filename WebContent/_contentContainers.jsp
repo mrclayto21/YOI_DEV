@@ -15,7 +15,7 @@
 <div class="row" style="margin-left: 125px;">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="./images/Stock_1.jpg" alt="...">
+      <img src="./images/Code_stock_1.png" alt="...">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>

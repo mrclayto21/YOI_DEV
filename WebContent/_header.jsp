@@ -20,7 +20,7 @@
 				        <span class="icon-bar">3</span> 
 				    </button>
 				    <!-- Replace with logo -->
-					<a class="navbar-brand" href="index.jsp">YOI Logo</a>
+					<a id="homeLogo" class="navbar-brand" href="index.jsp"><img src="https://github.com/mrclayto21/YOI_DEV/blob/master/WebContent/images/Logo_small.png?raw=true" height="30px" width="35px"alt="Youth Outreach Initiative"></a>
 				</div>
 				<!-- code once solution -->
 				<div class="collapse navbar-collapse" id="myNavbar">

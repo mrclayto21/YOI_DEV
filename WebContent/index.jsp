@@ -13,11 +13,9 @@
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1>Youth Outreach Initiative</h1> 
-    <p> {insert mission statement}</p> 
+    <h1><img src="https://github.com/mrclayto21/YOI_DEV/blob/master/WebContent/images/Logo_large.png?raw=true" height="33%px" width="90%"></h1> 
+    <p><i>Guiding tomorrow's programmers with today's youth.</i></p> 
   </div>
-
-testing
 </div>
 
 <div style="width:90%">
