@@ -1,5 +1,7 @@
+package Authentication;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Statement;
 
 public class UserUtil {
 	private static Connection conn = null; 
@@ -12,9 +14,10 @@ public class UserUtil {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				conn = DriverManager.getConnection(url,"admin", "password");
-				System.out.println("Connection was made");
+				Statement stmt = conn.createStatement(); 
+				System.out.println("DB connection established");
 			} catch (Exception e) {
-				e.printStackTrace();
+				System.out.println("Connection exception found: " + e.getMessage());
 			}//end catch
 			return conn;
 		}//end else

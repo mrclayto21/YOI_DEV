@@ -17,7 +17,7 @@
     <h1>Youth Outreach Initiative</h1> 
     <p> {insert mission statement}</p> 
   </div>
-  <H1>Welcome you have successfully registered!</H1>
+  <H1>Welcome <%= request.getSession().getAttribute("currentUser") %> you have successfully registered!</H1>
   <a class="btn btn-success" href="./index.jsp" role="button">Home</a>
 </div>
 

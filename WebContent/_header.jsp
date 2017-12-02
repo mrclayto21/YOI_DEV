@@ -27,11 +27,17 @@
 			      <ul class="nav navbar-nav">
 			        <li class="active"><a href ="index.jsp" >Home</a></li>
 			        <li><a href="aboutUs.jsp">About Us</a></li>
-			        <li><a href="#">Student Progress (Needs active session)</a></li> 
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="./signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			        <li><a href="./login.jsp"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+			        <% String user =  (String)request.getSession().getAttribute("currentUser");
+			        	if (user == null) {%>
+			        	<li><a href="./signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			        	<li><a href="./login.jsp"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+			        <% } else {
+		        	%>
+		        	<li><a href="#"><%= request.getSession().getAttribute("currentUser") %>'s Progress</a></li> 
+		        		<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			        <% }%>
 			      </ul>
 			    </div>
 			</div>

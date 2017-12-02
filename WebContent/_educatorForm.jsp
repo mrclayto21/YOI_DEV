@@ -16,6 +16,12 @@
 		    <label for="exampleInputPassword1">Password</label>
 		    <input id = "password" type="password" class="form-control" name="educatorPass" placeholder="Password">
 		  </div>
+  	  	  <fieldset disabled>
+		  <div class="form-group">
+		  <label for ="type"></label>
+		  <input id= "type" type="text" class="form-control" name="eduType" value="Educator">
+		  </div>
+		  </fieldset>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		  <br/><br/>

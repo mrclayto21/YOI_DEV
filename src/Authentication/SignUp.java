@@ -1,3 +1,4 @@
+package Authentication;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -10,7 +11,7 @@ public class SignUp extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String type = request.getParameter("type"); 
-		User user = new User(); 
+		UserDAO user = new UserDAO(); 
 		int result = 0; 
 		
 		if (type.equalsIgnoreCase("student")) {

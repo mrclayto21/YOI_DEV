@@ -1,3 +1,4 @@
+package Authentication;
 
 public class UserBean {
 	private String type; 
@@ -17,7 +18,14 @@ public class UserBean {
 	private String school; 
 	private String assignment; 
 	private String validation;
+	private boolean validUser; 
 	
+	public boolean getValidUser() {
+		return validUser;
+	}
+	public void setValidUser(boolean b) {
+		this.validUser = b;
+	}
 	public String getType() {
 		return type;
 	}
