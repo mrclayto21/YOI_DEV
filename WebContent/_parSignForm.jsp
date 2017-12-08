@@ -7,7 +7,7 @@
 
 </head>
 <body>
-	<form id="parentSignUp">
+	<form id="parentSignUp" method="post" action="SignUp?type=parent" onsubmit= "return parSigValidate()">
 	<!-- email -->
 		<div class="form-group">
 		    <label for="parentEmail">Parent Email</label>

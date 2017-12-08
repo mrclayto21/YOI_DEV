@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 		<form method="post" id="edform" action="Login" onsubmit= "return eduValidate()">
@@ -16,12 +15,6 @@
 		    <label for="exampleInputPassword1">Password</label>
 		    <input id = "password" type="password" class="form-control" name="educatorPass" placeholder="Password">
 		  </div>
-  	  	  <fieldset disabled>
-		  <div class="form-group">
-		  <label for ="type"></label>
-		  <input id= "type" type="text" class="form-control" name="eduType" value="Educator">
-		  </div>
-		  </fieldset>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		  <br/><br/>

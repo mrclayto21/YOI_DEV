@@ -7,7 +7,7 @@
 </head>
 <body>
 	<script type="text/javascript" src="./js/common.js"></script>
-	<form method="post" id="stuform" action="Login?type=student" onsubmit= "return stuLogValidate()" autocompleted="on">
+	<form method="post" id="stuform" action="Login?type=student" onsubmit= "return stuLogValidate()">
 	  <div class="form-group">
 	    <label for="email">Email</label>
 	    <input id = "email" type="email" class="form-control" name="email" placeholder="Email">

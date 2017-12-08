@@ -7,18 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+		  <link rel="stylesheet"  href="./css/bootstrap.css">
 	<title>Youth Outreach Initiative</title>
 </head>
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1>Youth Outreach Initiative</h1> 
-    <p> {insert mission statement}</p> 
+<H1>You have successfully logged out!</H1>
+  <p>You can now close this page</p>
+   <a class="btn btn-success" href="./index.jsp" role="button">Home</a>
   </div>
-  <H1>You have been successfully logged out!</H1>
-  <p>You can now close this page </br>
-   <a class="btn btn-success" href="./index.jsp" role="button">Home</a></p>
 </div>
 
 <div style="width:90%">

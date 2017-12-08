@@ -6,22 +6,13 @@
 <head>
 	  <meta charset="utf-8">
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet"  href="./css/bootstrap.min.css">
+	  <link rel="stylesheet"  href="./css/bootstrap.css">
 	  <script src="https://apis.google.com/js/platform.js" async defer></script>
 	  <meta name="google-signin-client_id" content="962796513505-97l0nomavgmo8m4v45jse3025ef4a5r8.apps.googleusercontent.com.apps.googleusercontent.com">
 	  <title>Youth Outreach Initiative</title>
 </head>
 	<body>
-
-
-<div class="container">
-  <div class="jumbotron">
-    <h1>Youth Outreach Initiative</h1> 
-    <p> {insert mission statement}</p> 
-  </div>
-  <p>Who we are</p> 
-  <p>what we are doing</p> 
-</div>
+	<jsp:include page="_YOIContainer.jsp"></jsp:include>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

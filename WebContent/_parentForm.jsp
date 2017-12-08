@@ -15,12 +15,6 @@
 		    <label for="parentPass">Password</label>
 		    <input id="password" type="password" class="form-control" name="parentPass" placeholder="Password">
 		  </div>
-	  	  <fieldset disabled>
-		  <div class="form-group">
-		  <label for ="type"></label>
-		  <input id= "type" type="text" class="form-control" name="parentType" value="Parent">
-		  </div>
-		  </fieldset>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default" >Submit</button>
 		  <br/><br/>

@@ -30,7 +30,6 @@ public class Database {
 			foo.readDatabase();
 		} catch (Exception e) {
 		 	// TODO Auto-generated catch block
-			System.out.println("here 1");
 			e.printStackTrace();
 		}
 	}//end main

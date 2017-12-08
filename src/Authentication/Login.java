@@ -39,7 +39,6 @@ public class Login extends HttpServlet {
 			String type = request.getParameter("type");
 			user.setType(type);
 			user = UserDAO.validUser(user);
-			System.out.println("validity " + user.getValidUser());
 			if (user.getValidUser() == true){
 				HttpSession session = request.getSession(true);
 				session.setAttribute("user", user);

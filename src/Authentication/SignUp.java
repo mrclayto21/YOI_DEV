@@ -1,68 +1,76 @@
 package Authentication;
-import java.io.IOException;
 
+import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet implementation class SignUp
+ */
+@WebServlet("/SignUp")
 public class SignUp extends HttpServlet {
-	private static final long serialVersionUID = 1L; 
-	
+	private static final long serialVersionUID = 1L;
+	UserBean user; 
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SignUp() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		try{
+			user = new UserBean(); 
+			String type = request.getParameter("type");
+			user.setType(type);
+			if (type == "student"){
+				//set user values
+				user.setClassID(request.getParameter("class_ID"));
+				user.setParentID(request.getParameter("parent_ID"));
+				user.setGrade_level(request.getParameter("gradelevel"));
+				user.setLastName(request.getParameter("lastName"));
+				user.setFirstName(request.getParameter("firstName"));
+				user.setPassword(request.getParameter("password"));
+				user.setEmail(request.getParameter("email"));
+				user.setAge(request.getParameter("age"));
+				user.setAddress(request.getParameter("zip"));
+			}
+			else if (type == "parent"){
+				user.setLastName(request.getParameter("lastName"));
+				user.setFirstName(request.getParameter("firstName"));
+				user.setEmail(request.getParameter("email"));
+				user.setPassword(request.getParameter("password"));
+				user.setPhoneNum(request.getParameter("phone_num"));
+				user.setParConsent(request.getParameter("parental_consent"));
+			}
+			else if (type == "educator"){
+				user.setEmail(request.getParameter("email"));
+				user.setPassword(request.getParameter("password"));
+				user.setClassID(request.getParameter("class_ID"));
+				user.setFirstName(request.getParameter("firstName"));
+				user.setLastName(request.getParameter("lastName"));
+				user.setSchool(request.getParameter("school"));
+			}
+		} catch (Exception e){
+			System.out.println("um, error here: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String type = request.getParameter("type"); 
-		UserDAO user = new UserDAO(); 
-		int result = 0; 
-		
-		if (type.equalsIgnoreCase("student")) {
-			//ints
-			String temp = request.getParameter("class_ID");
-			int c_id = Integer.getInteger(temp);
-			temp = request.getParameter("parent_ID"); 
-			int p_id = Integer.getInteger(temp);
-			String lname = request.getParameter("lastName"); 
-			String fname = request.getParameter("firstName");
-			String pass = request.getParameter("password"); 
-			String email = request.getParameter("email");
-			temp = request.getParameter("age");
-			int age = Integer.getInteger(temp);
-			String address = request.getParameter("address");
-			temp = request.getParameter("gradeLevel"); 
-			int grade = Integer.getInteger(temp);
-//			int comp = request.getParameter("completed");
-			int comp = 0; 
-//			int total = request.getParameter("total");
-			int total = 0; 
-			result = user.createStudent(c_id, p_id, lname, fname, pass, email, age, address, grade, comp, total);
-		} 
-		else if (type.equalsIgnoreCase("parent")) {
-			String lname = request.getParameter("lastName"); 
-			String fname = request.getParameter("firstName");
-			String pass = request.getParameter("password"); 
-			String phone = request.getParameter("phone_num");
-			String email = request.getParameter("email");
-			String temp = request.getParameter("parental_consent");
-			int consent;
-			if (temp == "true"){
-				consent = 1; 
-			}else 
-				consent = 0; 
-			result = user.createParent(lname, fname, phone, email, consent, pass);
-		}
-		else if (type.equalsIgnoreCase("educatior")) {
-			String lname = request.getParameter("lastName"); 
-			String fname = request.getParameter("firstName");
-			String pass = request.getParameter("password"); 
-			String school = request.getParameter("school_name");
-			String email = request.getParameter("email");
-			String temp = request.getParameter("assigned_class");
-			int as_class = Integer.getInteger(temp);
-			int val = 0; 
-			result = user.createEducator(lname, fname, email, school, as_class, val, pass);
-		}
-		if (result == 1){
-			response.sendRedirect("./success.jsp");
-		}
-		
-	}// end doPost
-}// end signUp
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
