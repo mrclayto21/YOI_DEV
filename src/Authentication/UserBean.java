@@ -6,20 +6,35 @@ public class UserBean {
 	private String password; 
 	private String firstName; 
 	private String lastName; 
-	private String classID; 
-	private String parentID;
-	private String age; 
+	private int classID; 
+	private int parentID;
+	private int educatorID; 
+	private int age; 
 	private String address; 
-	private String grade_level; 
-	private String completed; 
-	private String total; 
-	private String phoneNum; 
-	private String parConsent; 
+	private int grade_level; 
+	private int completed; 
+	private int total; 
+	private Long phoneNum; 
+	private int parConsent; 
 	private String school; 
 	private String assignment; 
-	private String validation;
+	private int validation;
 	private boolean validUser; 
 	
+	public int getEducatorID() {
+		return educatorID;
+	}
+	public void setEducatorID(int educatorID) {
+		this.educatorID = educatorID;
+	}
+	private String childInfo;
+	
+	public String getChildInfo() {
+		return childInfo;
+	}
+	public void setChildInfo(String childInfo) {
+		this.childInfo = childInfo;
+	}
 	public boolean getValidUser() {
 		return validUser;
 	}
@@ -56,22 +71,22 @@ public class UserBean {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getClassID() {
+	public int getClassID() {
 		return classID;
 	}
-	public void setClassID(String classID) {
+	public void setClassID(int classID) {
 		this.classID = classID;
 	}
-	public String getParentID() {
+	public int getParentID() {
 		return parentID;
 	}
-	public void setParentID(String parentID) {
+	public void setParentID(int parentID) {
 		this.parentID = parentID;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getAddress() {
@@ -80,34 +95,34 @@ public class UserBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getGrade_level() {
+	public int getGrade_level() {
 		return grade_level;
 	}
-	public void setGrade_level(String grade_level) {
+	public void setGrade_level(int grade_level) {
 		this.grade_level = grade_level;
 	}
-	public String getCompleted() {
+	public int getCompleted() {
 		return completed;
 	}
-	public void setCompleted(String completed) {
+	public void setCompleted(int completed) {
 		this.completed = completed;
 	}
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
-	public String getPhoneNum() {
+	public Long getPhoneNum() {
 		return phoneNum;
 	}
-	public void setPhoneNum(String phoneNum) {
+	public void setPhoneNum(Long phoneNum) {
 		this.phoneNum = phoneNum;
 	}
-	public String getParConsent() {
+	public int getParConsent() {
 		return parConsent;
 	}
-	public void setParConsent(String parConsent) {
+	public void setParConsent(int parConsent) {
 		this.parConsent = parConsent;
 	}
 	public String getSchool() {
@@ -122,10 +137,10 @@ public class UserBean {
 	public void setAssignment(String assignment) {
 		this.assignment = assignment;
 	}
-	public String getValidation() {
+	public int getValidation() {
 		return validation;
 	}
-	public void setValidation(String validation) {
+	public void setValidation(int validation) {
 		this.validation = validation;
 	} 
 	

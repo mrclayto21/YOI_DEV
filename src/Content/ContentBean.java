@@ -2,24 +2,38 @@ package Content;
 
 public class ContentBean {
 	private String lesson_id; 
-	private String module_id; 
+	private String module_name; 
 	private String lesson_Name; 
 	private String lesson_description; 
+	private String imgLink; 
 	private String content_one; 
 	private String content_two; 
-	private String content_three;
+	private String content_three; 
+	private boolean successfullPull;
 	
+	public boolean isSuccessfullPull() {
+		return successfullPull;
+	}
+	public void setSuccessfullPull(boolean successfullPull) {
+		this.successfullPull = successfullPull;
+	}
 	public String getLesson_id() {
 		return lesson_id;
 	}
+	public String getModule_name() {
+		return module_name;
+	}
+	public void setModule_name(String module_name) {
+		this.module_name = module_name;
+	}
+	public String getImgLink() {
+		return imgLink;
+	}
+	public void setImgLink(String imgLink) {
+		this.imgLink = imgLink;
+	}
 	public void setLesson_id(String lesson_id) {
 		this.lesson_id = lesson_id;
-	}
-	public String getModule_id() {
-		return module_id;
-	}
-	public void setModule_id(String module_id) {
-		this.module_id = module_id;
 	}
 	public String getLesson_Name() {
 		return lesson_Name;

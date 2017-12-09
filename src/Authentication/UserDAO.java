@@ -1,7 +1,10 @@
 package Authentication;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.apache.catalina.User;
 
 
 public class UserDAO {
@@ -24,15 +27,14 @@ public class UserDAO {
 	 * @return Name of the user if successful
 	 * @error set string is not inserting the user defined email and password; 
 	 */
-	public static UserBean validUser(UserBean bean){
-		String email = bean.getEmail();
+	public static UserBean validUser(UserBean bean) throws SQLException{
+		String email = bean.getEmail().toLowerCase();
 		String password = bean.getPassword();
 		String type = bean.getType();
 		String firstName = null; 
 		rs = null;
-		
 		try {
-			if (type.equals("student")){
+			if (type.equalsIgnoreCase("student")){
 				String select= "select * from student where email = '" + email + "' AND password = '" + password + "'";
 				dbConn = UserUtil.getConnection(); 
 				stmt = dbConn.createStatement(); 
@@ -44,8 +46,52 @@ public class UserDAO {
 					firstName = rs.getString("firstName");
 					bean.setFirstName(rs.getString("firstName"));
 					System.out.println("logging session for " + firstName );
+				}//end else
+			} else if (type.equalsIgnoreCase("parent")){
+
+				String select = "select * from parent where email = '" + email + "' AND password = '" + password + "'";
+				dbConn = UserUtil.getConnection(); 
+				stmt = dbConn.createStatement(); 
+				rs = stmt.executeQuery(select); 
+				if (!rs.first()){
+					bean.setValidUser(false);
+				}else if (rs.first()){
+					bean.setValidUser(true);
+					bean.setParentID(rs.getInt("parent_id"));
+					firstName = rs.getString("firstName");
+					bean.setFirstName(rs.getString("firstName"));
+					System.out.println("User " + firstName + " found");
+					String childInfo = "select CONCAT(FIRSTNAME, ' ', LASTNAME, ' Completed Lessons: ' , completed, ', Percent to Complete: ', round((completed/ (select count(*) from lessonplan))*100)) as studentInfo from student where parent_id = " + bean.getParentID(); 
+					stmt = dbConn.createStatement(); 
+					rs = stmt.executeQuery(childInfo);
+					//gets concatenated child info
+					if (rs.first())
+					{
+						System.out.println("child info found");
+						bean.setChildInfo(rs.getString("studentInfo"));
+					}//no else
+					else {
+						System.out.println("no child registered");
+					}
+				}//end else
+			} else if (type.equalsIgnoreCase("educator")){
+				String select = "select * from educator where email = '" + email + "' AND password = '" + password + "'";
+				dbConn = UserUtil.getConnection(); 
+				stmt = dbConn.createStatement();
+				rs = stmt.executeQuery(select); 
+				if (!rs.first()){
+					bean.setValidUser(false);
+				} else if (rs.next()){
+					bean.setValidUser(true);
+					bean.setEducatorID(rs.getInt("educator_id"));
+					String allStudents = "select Concat('Student: ', student_id, ', ', lastname, ' ', firstname, ' Age: ', age, ', Grade: ', grade_level, ' ') as allStudents from student where class_id = (select class_id from educator where educator_id = ' " + bean.getEducatorID() +"'";
+					stmt = dbConn.createStatement(); 
+					rs = stmt.executeQuery(allStudents);
+					if (rs.next()){
+						bean.setChildInfo(rs.getString("allStudents"));
+					}
 				}
-			}
+			}// if not found in above conditions you are sol
 		} catch (Exception e){
 			System.out.println("Logging error \n" + e.getMessage());
 		}
@@ -68,21 +114,21 @@ public class UserDAO {
 	 * @return
 	 */
 	//private String INS_STUD = "INSERT INTO STUDENT (CLASS_ID, PARENT_ID, LASTNAME, FIRSTNAME, PASSWORD, EMAIL, AGE, ADDRESS, GRADE_LEVEL, COMPLETED, TOTAL) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-	public UserBean createStudent(UserBean bean){
+	public static UserBean createStudent(UserBean bean){
 		//student_id, class_id, parent_id, lastname, firstname, password, email, age
 		//address, grade_level, completed, total
 		String type = bean.getType();
-		String class_id = bean.getClassID(); 
-		String parent_id = bean.getParentID(); 
+		int class_id = bean.getClassID(); 
+		int parent_id = bean.getParentID(); 
 		String lastname = bean.getLastName(); 
 		String firstname = bean.getFirstName(); 
 		String password = bean.getPassword(); 
 		String email = bean.getEmail(); 
-		String age = bean.getAge(); 
+		int age = bean.getAge(); 
 		String address = bean.getAddress(); 
-		String grade_level = bean.getGrade_level(); 
-		String completed = bean.getCompleted(); 
-		String total = bean.getTotal(); 
+		int grade_level = bean.getGrade_level(); 
+		int completed = bean.getCompleted(); 
+		int total = bean.getTotal(); 
 		rs = null; 
 		
 		try {
@@ -92,7 +138,10 @@ public class UserDAO {
 			dbConn = UserUtil.getConnection(); 
 			stmt = dbConn.createStatement();
 			rs = stmt.executeQuery(insert); 
-			System.out.println("Inserting Student: " + rs.next());
+			System.out.println("Inserting Student: " + rs.first());
+			if (rs.first()){
+				bean.setValidUser(true);
+			}
 		} catch (Exception e){
 			System.out.println("Error inserting student record \n" + e.getMessage());
 		}
@@ -111,23 +160,24 @@ public class UserDAO {
 	 * @return name of the parent upon success
 	 */
 	//private String INS_PARE = "INSERT INTO PARENT(LASTNAME, FIRSTNAME, PHONE_NUM, EMAIL, PARENTAL_CONSENT) VALUES (?,?,?,?,?)"; 
-	public UserBean createParent(UserBean bean){
+	public static UserBean createParent(UserBean bean){
 		String type = bean.getType(); 
-		String lastname = bean.getType(); 
-		String firstname = bean.getType();
-		String email = bean.getEmail(); 
-		String password = bean.getEmail(); 
-		String phone = bean.getEmail(); 
-		String consent = bean.getParConsent(); 
+		String lastname = bean.getLastName();
+		String firstname = bean.getFirstName();
+		String email = bean.getEmail();
+		String password = bean.getPassword(); 
+		Long phone = bean.getPhoneNum();
+		int consent = bean.getParConsent(); 
 		rs = null; 
 		
 		try {
-			String insert = "insert into PARENT(LASTNAME, FIRSTNAME, EMAIL, PASSWORD, PHONE_NUM, PARENTAL_CONSENT, TYPE)"
-					+ "VALUES (" + lastname + "," + firstname + ", " + email + ", " + password + ", " + phone + ", " + consent + ", " + type + ")";
+			String insert = "insert into PARENT (LASTNAME, FIRSTNAME, EMAIL, PASSWORD, PHONE_NUM, PARENTAL_CONSENT, TYPE)"
+					+ "VALUES ('" + lastname + "','" + firstname + "', '" + email + "', '" + password + "', " + phone + ", " + consent + ", '" + type + "')";
 			dbConn = UserUtil.getConnection(); 
-			stmt = dbConn.createStatement(); 
-			rs = stmt.executeQuery(insert); 
-			System.out.println("Inserting Parent: " + rs.next());
+			stmt = dbConn.createStatement();  
+			stmt.executeUpdate(insert);
+			System.out.println("Parent record inserted");
+			bean.setValidUser(true);
 		} catch (Exception e){
 			System.out.println("Error inserting parent record \n" + e.getMessage());
 		}
@@ -147,7 +197,7 @@ public class UserDAO {
 	 * @return name of the educator upon success
 	 */
 	//private String INS_EDUC = "INSERT INTO EDUCATOR (LASTNAME, FIRSTNAME, EMAIL, SCHOOL_NAME, ASSIGNED_CLASS, VALIDATION_FLAG, PASSWORD) VALUES (?,?,?,?,?,?,?)";
-	public UserBean createEducator(UserBean bean){
+	public static UserBean createEducator(UserBean bean){
 		String type = bean.getType(); 
 		String lastname = bean.getType(); 
 		String firstname = bean.getType(); 
@@ -155,7 +205,7 @@ public class UserDAO {
 		String password = bean.getType();
 		String school = bean.getSchool(); 
 		String assigned = bean.getAssignment(); 
-		String validation = bean.getValidation(); 
+		int validation = bean.getValidation(); 
 		rs = null; 
 		
 		try {
@@ -163,8 +213,11 @@ public class UserDAO {
 					+ "VALUES(" + lastname + ", " + firstname + ", " + email + ", " + password + ", " + school + ", " + assigned + ", " + validation + ", " + type + ")";
 			dbConn = UserUtil.getConnection(); 
 			stmt = dbConn.createStatement(); 
-			rs = stmt.executeQuery(insert); 
-			System.out.println("Inserting Educator: " + rs.next());
+			stmt.executeUpdate(insert); 
+			System.out.println("Inserting Educator: " + rs.first());
+			if (rs.first()){
+				bean.setValidUser(true);
+			}
 		} catch (Exception e){
 			System.out.println("Error inserting educator record \n" + e.getMessage());
 		}

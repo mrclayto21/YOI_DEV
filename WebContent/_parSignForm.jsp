@@ -11,12 +11,12 @@
 	<!-- email -->
 		<div class="form-group">
 		    <label for="parentEmail">Parent Email</label>
-		    <input id="email"type="email" class="form-control" name="inputEmail" placeholder="Email">
+		    <input id="email" type="email" class="form-control" name="email" placeholder="Email">
 		</div> <!-- email -->
 	<!-- password -->
 		<div class="form-group">
 			<label for="parentPass">Password</label>
-			<input id="password" type="password" class="form-control" name="inputPass" placeholder="Password">
+			<input id="password" type="password" class="form-control" name="password" placeholder="Password">
 		</div><!-- password -->
 	<!-- first name -->
 		<div class="form-group">
@@ -31,12 +31,12 @@
 	<!-- phone number -->
 		<div class="form-group">
 			<label for="phoneNumber" name="phoneNum">Phone Number</label>
-			<input id="phone_num" type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="(###) ###-####">
+			<input id="phone_num" name = "phone_num" type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" placeholder="(###) ###-####">
 		</div><!-- phone -->
 	<!-- consent -->
 		<div class="form-group">
 			<label for="parentConsent" name="parConsent">Parental Consent <br/> ** Required to allow student to sign-up.</label>
-			<input id="parental_consent"type="checkbox" class="form-control" name="parConsent">
+			<input id="parental_consent"type="checkbox" class="form-control" name="parental_consent" value="1">
 		</div><!-- consent -->
 	  <button type="reset" class="btn btn-default">Reset</button>
 	  <button type="submit" class="btn btn-default">Submit</button>

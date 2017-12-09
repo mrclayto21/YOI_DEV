@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-		<form method="post" id="parform" action="Login" onsubmit= "return parValidate()">
+		<form method="post" id="parform" action="Login?type=parent" onsubmit= "return parValidate()">
 		  <div class="form-group">
 		    <label for="parentEmail">Parent Email</label>
-		    <input id="email" type="email" class="form-control" name="parentEmail" placeholder="Parent email">
+		    <input id="email" type="email" class="form-control" name="email" placeholder="Parent email">
 		  </div>
 		  <div class="form-group">
 		    <label for="parentPass">Password</label>
-		    <input id="password" type="password" class="form-control" name="parentPass" placeholder="Password">
+		    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
 		  </div>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default" >Submit</button>

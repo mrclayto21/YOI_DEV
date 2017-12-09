@@ -34,15 +34,19 @@ public class Login extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		try{
 			user = new UserBean(); 
-			user.setEmail(request.getParameter("email"));
-			user.setPassword(request.getParameter("password"));
-			String type = request.getParameter("type");
+			user.setEmail(request.getParameter("email").trim());
+			user.setPassword(request.getParameter("password").trim());
+			String type = request.getParameter("type").trim();
 			user.setType(type);
 			user = UserDAO.validUser(user);
 			if (user.getValidUser() == true){
 				HttpSession session = request.getSession(true);
 				session.setAttribute("user", user);
 				session.setAttribute("currentUser", user.getFirstName());
+				session.setAttribute("type", type);
+				if (type == "parent" || type == "educator"){
+					session.setAttribute("students", user.getChildInfo());
+				}
 				response.sendRedirect("success.jsp");
 			}else {
 				System.out.println("invalid login");
@@ -54,7 +58,7 @@ public class Login extends HttpServlet {
 			}
 
 		}catch (Throwable exc){
-			System.out.println(exc);
+			System.out.println("Throwable" + exc);
 		}
 	}//end do get
 

@@ -9,7 +9,7 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<div style="margin: auto" >
+<form style="margin: auto" method="post" action="/Content" >
 <div class="row" style="margin-left: 125px;">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -22,6 +22,6 @@
     </div>
   </div><!-- end col-sm6 -->
   </div><!-- end row -->
-</div><!-- end first -->
+</form><!-- end first -->
 </body>
 </html>

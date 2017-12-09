@@ -24,15 +24,18 @@
 			        <li><a href="aboutUs.jsp">About Us</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
-			        <% String user =  (String)request.getSession().getAttribute("currentUser");
-			        	if (user == null) {%>
+			        <% String u =  (String)request.getSession().getAttribute("currentUser");
+			           String t =  (String)request.getSession().getAttribute("type");
+			        	if (u == null) {%>
 			        	<li><a href="./signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 			        	<li><a href="./login.jsp"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
-			        <% } else {
-		        	%>
-		        	<li><a href="./progress.jsp"><%= request.getSession().getAttribute("currentUser") %>'s Progress</a></li> 
+			        <% } else if (t == "parent" || t == "educator"){ %>
+			        	<li><a href="./progress.jsp"> View Child's Progress</a></li> 
 		        		<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-			        <% }%>
+			        <% } else {%>
+			        	<li><a href="./progress.jsp"><%= request.getSession().getAttribute("currentUser") %>'s Progress</a></li> 
+		        		<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		        	<% }%>
 			      </ul>
 			    </div>
 			</div>

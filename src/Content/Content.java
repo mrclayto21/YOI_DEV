@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Content")
 public class Content extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	ContentBean contentBean; 
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,7 +29,15 @@ public class Content extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-
+		try {
+			contentBean = new ContentBean(); 
+			contentBean = ContentDAO.returnAllLessons();
+			if (contentBean.isSuccessfullPull()){
+				System.out.println("Lessons found");
+			}
+		} catch (Throwable e) {
+			System.out.println("Throwable: " + e);
+		}
 	}
 
 	/**

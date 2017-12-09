@@ -12,17 +12,13 @@
 	<title>Youth Outreach Initiative</title>
 </head>
 <body>
-<div class="container">
-  <div class="jumbotron">
-    <h1>Youth Outreach Initiative</h1> 
-    <p> {insert mission statement}</p> 
-  </div>
-  <H1>Welcome <%= request.getSession().getAttribute("currentUser") %> you have successfully registered!</H1>
-  <a class="btn btn-success" href="./index.jsp" role="button">Home</a>
-</div>
-
-<div style="width:90%">
-</div>
-
+	<div class="container">
+		<div class="jumbotron">
+			<H1>Welcome <%= request.getSession().getAttribute("currentUser") %> you have been successfully registered!</H1>
+			<p>Continue to the Home page to view the available lessons.</p>
+  			<a class="btn btn-success" href="./index.jsp" role="button">Home</a>
+		</div>
+	</div>
+	
 </body>
 </html>
