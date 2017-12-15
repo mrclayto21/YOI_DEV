@@ -7,6 +7,7 @@ public class UserBean {
 	private String firstName; 
 	private String lastName; 
 	private int classID; 
+	private int studentID;
 	private int parentID;
 	private int educatorID; 
 	private int age; 
@@ -21,6 +22,14 @@ public class UserBean {
 	private int validation;
 	private boolean validUser; 
 	
+
+	
+	public int getStudentID() {
+		return studentID;
+	}
+	public void setStudentID(int studentID) {
+		this.studentID = studentID;
+	}
 	public int getEducatorID() {
 		return educatorID;
 	}

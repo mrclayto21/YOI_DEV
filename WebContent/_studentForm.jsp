@@ -16,14 +16,13 @@
 	    <label for="password">Password</label>
 	    <input id = "password" type="password" class="form-control" name="password" placeholder="Password">
 	  </div>
-	<!--<fieldset disabled>
-	  <div class="form-group">
-	  <label for ="type"></label>
-	  <input id= "type" type="hidden" class="form-control" name="type" value="student">
-	  </div>
-	  </fieldset>-->
 	  <button type="reset" class="btn btn-default">Reset</button>
 	  <button type="submit" id="login" class="btn btn-default">Submit</button>
+	  <% String notValid = (String)request.getSession().getAttribute("loginError");
+	  if (notValid == "true"){%>
+	   ${ loginError }
+	 <% } %>
+  
 	  <br/><br/>
 	  <p>Not a member? Sign up <a href="./signUp.jsp"><span></span>here.</a></p>
 	 </form>

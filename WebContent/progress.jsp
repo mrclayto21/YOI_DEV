@@ -5,8 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"  href="./css/bootstrap.css">
+<jsp:include page="_header.jsp"></jsp:include>
 </head>
 <body>
-
+	<div class="container">
+		<div class="jumbotron"><h1>Progress Results <small>Manual Entry</small></h1></div>
+		<p class="lead"><%= request.getSession().getAttribute("students") %></p>
+	</div>
 </body>
 </html>

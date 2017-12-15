@@ -11,6 +11,8 @@
   <div class="jumbotron">
     <h1><img src="https://github.com/mrclayto21/YOI_DEV/blob/master/WebContent/images/Logo_large.png?raw=true" height="33%px" width="90%"></h1> 
     <p><i>Guiding tomorrow's programmers starting with today's youth.</i></p> 
+    <h4>* DEVELOPMENT ENVIRONMENT *</h4>
+    <h6>All data rendered is testing data. </h6>
   </div>
 </div>
 </body>

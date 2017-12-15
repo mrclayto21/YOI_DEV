@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-		<form method="post" id="edform" action="Login" onsubmit= "return eduValidate()">
+		<form method="post" id="edform" action="Login?type=educator" onsubmit= "return eduValidate()">
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Educator Email</label>
-		    <input id = "email" type="email" class="form-control" name="educatorEmail" placeholder="Educator email">
+		    <input id = "email" type="email" class="form-control" name="email" placeholder="Educator email">
 		  </div>
 		  <div class="form-group">
 		    <label for="exampleInputPassword1">Password</label>
-		    <input id = "password" type="password" class="form-control" name="educatorPass" placeholder="Password">
+		    <input id = "password" type="password" class="form-control" name="password" placeholder="Password">
 		  </div>
 		  <button type="reset" class="btn btn-default">Reset</button>
 		  <button type="submit" class="btn btn-default">Submit</button>

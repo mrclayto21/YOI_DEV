@@ -43,8 +43,18 @@ public class UserDAO {
 					bean.setValidUser(false);
 				}else if (rs.first()){
 					bean.setValidUser(true);
+					bean.setStudentID(rs.getInt("student_id"));
 					firstName = rs.getString("firstName");
 					bean.setFirstName(rs.getString("firstName"));
+					String childInfo = "select CONCAT(FIRSTNAME, ' ', LASTNAME, ' Completed Lessons: ' , completed, ', Percent to Complete: ', round((completed/ (select count(*) from lessonplan))*100)) as studentInfo from student where student_id = " + bean.getStudentID();
+					stmt = dbConn.createStatement(); 
+					rs = stmt.executeQuery(childInfo);
+					//gets concatenated child info
+					if (rs.first())
+					{
+						System.out.println("child info found");
+						bean.setChildInfo(rs.getString("studentInfo"));
+					}//no else
 					System.out.println("logging session for " + firstName );
 				}//end else
 			} else if (type.equalsIgnoreCase("parent")){
@@ -81,13 +91,14 @@ public class UserDAO {
 				rs = stmt.executeQuery(select); 
 				if (!rs.first()){
 					bean.setValidUser(false);
-				} else if (rs.next()){
+				} else if (rs.first()){
 					bean.setValidUser(true);
+					bean.setFirstName(rs.getString("firstname"));
 					bean.setEducatorID(rs.getInt("educator_id"));
-					String allStudents = "select Concat('Student: ', student_id, ', ', lastname, ' ', firstname, ' Age: ', age, ', Grade: ', grade_level, ' ') as allStudents from student where class_id = (select class_id from educator where educator_id = ' " + bean.getEducatorID() +"'";
+					String findAll = "select CONCAT('Student: ', student_id, ', ', lastname, ' ', firstname, ' Age: ', age, ', Grade: ', grade_level, ' ') as allStudents from student where class_id = (select class_id from educator where educator_id =" + bean.getEducatorID()+")";
 					stmt = dbConn.createStatement(); 
-					rs = stmt.executeQuery(allStudents);
-					if (rs.next()){
+					rs = stmt.executeQuery(findAll);
+					if (rs.first()){
 						bean.setChildInfo(rs.getString("allStudents"));
 					}
 				}

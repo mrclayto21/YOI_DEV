@@ -31,7 +31,6 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		try{
 			user = new UserBean(); 
 			user.setEmail(request.getParameter("email").trim());
@@ -44,22 +43,18 @@ public class Login extends HttpServlet {
 				session.setAttribute("user", user);
 				session.setAttribute("currentUser", user.getFirstName());
 				session.setAttribute("type", type);
-				if (type == "parent" || type == "educator"){
-					session.setAttribute("students", user.getChildInfo());
-				}
+				session.setAttribute("students", user.getChildInfo());
 				response.sendRedirect("success.jsp");
 			}else {
 				System.out.println("invalid login");
-				PrintWriter temp = response.getWriter(); 
-				response.setContentType("text/javascript");
-				temp.println("<script>");
-				temp.println("alert('email or password is incorrect');");
-				temp.println("</script>");
-				response.sendRedirect("login.jsp");
+				request.setAttribute("isInvalid", "true");
+				request.setAttribute("loginError", "Invalid login, please try again.");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 
 		}catch (Throwable exc){
-			System.out.println("Throwable" + exc);
+			System.out.println("Throwable");
+			exc.printStackTrace();
 		}
 	}//end do get
 

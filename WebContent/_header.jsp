@@ -21,7 +21,7 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 			      <ul class="nav navbar-nav">
 			        <li ><a href ="index.jsp" >Home</a></li>
-			        <li><a href="aboutUs.jsp">About Us</a></li>
+			        <li><a href="aboutUs.jsp">Site Progress</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			        <% String u =  (String)request.getSession().getAttribute("currentUser");
