@@ -24,7 +24,28 @@ public class ContentBean {
 	private String content_one; 
 	private String content_two; 
 	private String content_three; 
+	private String summary_one; 
+	private String summary_two; 
+	private String summary_three; 
 
+	public String getSummary_one() {
+		return summary_one;
+	}
+	public void setSummary_one(String summary_one) {
+		this.summary_one = summary_one;
+	}
+	public String getSummary_two() {
+		return summary_two;
+	}
+	public void setSummary_two(String summary_two) {
+		this.summary_two = summary_two;
+	}
+	public String getSummary_three() {
+		return summary_three;
+	}
+	public void setSummary_three(String summary_three) {
+		this.summary_three = summary_three;
+	}
 	public int getLesson_id() {
 		return lesson_id;
 	}
@@ -40,8 +61,8 @@ public class ContentBean {
 	public void setImgLink(String imgLink) {
 		this.imgLink = imgLink;
 	}
-	public void setLesson_id(int lesson_id) {
-		this.lesson_id = lesson_id;
+	public void setLesson_id(int lessonID) {
+		this.lesson_id = lessonID;
 	}
 	public String getLesson_Name() {
 		return lesson_Name;

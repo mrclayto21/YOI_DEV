@@ -51,7 +51,8 @@ public class Login extends HttpServlet {
 			}else {
 				System.out.println("invalid login");
 				PrintWriter temp = response.getWriter(); 
-				temp.println("<script type=\"text/javascript\">");
+				response.setContentType("text/javascript");
+				temp.println("<script>");
 				temp.println("alert('email or password is incorrect');");
 				temp.println("</script>");
 				response.sendRedirect("login.jsp");

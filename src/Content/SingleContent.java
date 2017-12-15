@@ -16,17 +16,17 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 /**
- * Servlet implementation class ContentServlet
+ * Servlet implementation class SingleContent
  */
-@WebServlet("/Content")
-public class Content extends HttpServlet {
+@WebServlet("/SingleContent")
+public class SingleContent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	ContentBean contentBean; 
+	ContentBean lesson; 
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Content() {
+    public SingleContent() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,13 +36,17 @@ public class Content extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ArrayList<ContentBean> lesson = new ArrayList<ContentBean>();
-		lesson = ContentDAO.returnAllLessons(); 
+		ContentBean bean = new ContentBean();
+		int temp = Integer.parseInt(request.getParameter("lesson_id").trim());
+		bean.setLesson_id(temp);
+		ArrayList<ContentBean> lesson = new ArrayList<ContentBean>(); 
+		lesson = ContentDAO.getSingleLesson(bean);
 		Gson gson = new Gson(); 
-		JsonElement elem = gson.toJsonTree(lesson, new TypeToken<List<ContentBean>>() {}.getType());
-		JsonArray jArray = elem.getAsJsonArray();
+		JsonElement elem = gson.toJsonTree(lesson, new TypeToken<List<ContentBean>>() {}.getType()); 
+		JsonArray jArray = elem.getAsJsonArray(); 
 		response.setContentType("application/json");
 		response.getWriter().print(jArray);
+		System.out.println(jArray);
 	}
 
 	/**
